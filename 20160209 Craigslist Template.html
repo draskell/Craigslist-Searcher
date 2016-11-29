@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drew's Car Results</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		{% for model in models %}
+		<h1>{{ model }}</h1>
+		<ul>
+			{% for result in results[model] %}
+				<li><a href="{{ result.url }}">{{ result.title }}</a>- {{ result.price }} - {{ result.time }}</li>
+			{% endfor %}
+		</ul>
+		{% endfor %}
+</div>
+</body>
+</html>
